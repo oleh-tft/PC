@@ -16,15 +16,12 @@ int main()
 	Mouse mouse("Bloody");
 	Headphones headphones("Razer");
 	Screen screen("Acer");
-	CPU cpu("Intel");
-	RAM ram("Gigabyte");
-	SSD ssd("Kingston");
 
-	PC* pc = new PC("Alienware", &keyboard, &mouse, &headphones, &screen, cpu, ram, ssd);
+	PC* pc = new PC("Alienware", &keyboard, &mouse, &headphones, &screen, CPU("Intel"), RAM("Gigabyte"), SSD("Kingston"));
 	pc->Output();
 
 	cout << keyboard.GetModel() << endl;
-	cout << cpu.GetModel() << endl;
+	cout << pc->GetCPU().GetModel() << endl;
 
 	delete pc;
 
